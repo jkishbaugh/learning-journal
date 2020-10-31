@@ -1,0 +1,46 @@
+= Everything You Need to know To Add Redux To Your Project
+
+Do you find you are passing a large state object from one part of your project
+to another? Are you using React and find yourself doing an excessive amount
+of prop-drilling?
+
+It is probably time to consider a better way to manage your state. Enter Redux.It's
+tried and true. Are there downsides to it? Certainly, but nothing is perfect
+and the advantages are hefty.
+
+== The Setup
+
+Alright so enough sales pitch, let's get started.
+Open your terminal and navigate to the place where your `package.json` file is located.
+//divergent paths plain redux and react redux link to each
+
+- Basic redux installation with npm or with yarn run the following command
+
+    npm install redux
+
+    yarn install redux
+
+- Adding or using Redux with React this is your jam.
+
+    npm install redux react-redux
+
+    yarn install redux react- redux
+
+== Let's add the store
+
+//Basic project first redux alone
+//The first reducer
+//Add actions
+//Ready to run
+
+== React Create Store
+//add store to index.js
+//folder structure
+//create reducer
+//wrap App tag with Provider
+// add actions
+//access store in a component
+// connect function ** need to dive deeper to understand what this is doing
+// dispatch action from component
+// dispatch action from nested component
+
