@@ -1,0 +1,35 @@
+:imagesdir: ../images
+= Writing Functional Javascript From the Beginning
+
+_Important Definitions_
+
+Higher Order Function - any function that accepts a parameter that is a function
+
+_Javascript Common Higher Order Functions_
+
+[horizontal]
+Filter:: accepts a comparative function that decides whether the element should be included in the new array. This means that it expects true or false to be returned to decide if the current element belongs in the new object.
+[source, javascript]
+----
+include::FunctionalExamples.js[lines=19..26]
+include::FunctionalExamples.js[lines=29..30]
+----
+The output when we run this method
+
+image::filterOutput.png[]
+
+[horizontal]
+Map:: Expects a new object to be inserted into the collections to be returned.
+
+As an example we can use the same pets array from above and run it through the map function. We will create a new array that has only the pets names.
+----
+include::FunctionalExamples.js[lines=33..34]
+----
+[horizontal]
+Reduce:: Expects a function and an object to be passed in too. This object may be a value, object or array.
+
+### Arrays
+
+Concat returns a new array with the concat object added to it
+Push manipulates the original array
+
