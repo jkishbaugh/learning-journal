@@ -1,0 +1,6 @@
+## F # basics
+
+==== Starting a project
+- command line
+
+    dotnet new console -lang F# -o nameOfApp

@@ -1,0 +1,102 @@
+# Spring Framework Nuts and Bolts (or Beans and Annotations)
+
+
+TLDR; The Spring Framework is essentially a dependency injection container with some layers of convenience added on top i.e. (database access, aspect oriented programming, web mvc framework, etc..).
+
+In order to better understand the Spring Framework you should understand the pain points that it intended to solve. The best way to do this is by creating a web application without the use of Spring. Then we can recreate the same app using the framework.
+
+We will be creating a web app that allows the user to take a short quiz and store the results.
+
+### Application Without Spring
+To begin with create a new empty Maven project. Then add App.java to src/main/java.
+
+We will need to add a web server to the context of our app. We will be using Tomcat so we will need to add the following dependency to our pom.xml file.
+[source, xml]
+----
+<dependency>
+    <groupId>org.apache.tomcat.embed</groupId>
+    <artifactId>tomcat-embed-core</artifactId>
+    <version>9.0.39</version>
+</dependency>
+----
+
+
+[source#App, java]
+----
+public class App {
+
+    public static void main(String[] args) throws LifecycleException {
+
+        Tomcat tomcat = new Tomcat();
+        tomcat.setPort(8080);
+        tomcat.getConnector();
+
+        Context ctx = tomcat.addContext("", null);
+        Wrapper servlet = Tomcat.addServlet(ctx, "quizServlet", new QuizServlet());
+        servlet.setLoadOnStartup(1);
+        servlet.addMapping("/*");
+
+        tomcat.start();
+    }
+}
+----
+
+At this point your IDE will probably alert you to an error in the class or you will get a compilation error when trying to run. That is because the class QuizServlet does not yet exist so let's create that next.
+
+Quiz servlet will extend HttpServlet. To start with you will override the doGet method on the quiz servlet. We will add more to this later.
+
+[source, java]
+----
+public class Question () {
+    private final int id;
+    private final String details;
+    private final Answer answer;
+    private final String property;
+
+    public GenericClass(int id, String name, String property){
+        this.id = id;
+        this.name = name;
+        this.property = property;
+    }
+    //Getters and Setters
+}
+----
+### Adding Spring to the Project
+Dependency - a relationship between two or more objects in which one object depends on the other object or objects in order to be implemented.
+
+Inversion of Control - Spring inverts where dependency management occurs. Rather managing dependencies everywhere they are needed there is central container that the Beans you have configured.
+
+Beans - A Bean is a class instance created with a factory method. They are created and controlled by the IOC. Beans are kept until they are no longer needed which is determined by their scope. There is a long list of bean scopes but the most common ones in a Spring application are the singleton, prototype, and session.
+
+ApplicationContext - The thing that has control over all of your classes and can instantiate them with the correct dependencies. There are several types of contexts(AnnotationConfigApplicationContext, ClassPathXmlApplicationContext,...). The one you use will be based on the method used to configure your application.
+
+### Notable Annotations
+@ComponentScan - scans the package where the configuration file being annotated lives
+@Component - flags a class for the component scan
+@Bean - identifies a bean
+@Autowired - tells where a dependency needs to be injected.
+- Constructor Injection
+- Field Injection
+- Setter Injection
+@Value
+@Service
+
+### Transaction Management
+Another great abstraction that Spring provides or a common use case for the framework is database transactions. With the @Transactional annotation the IOC will open, close, and rollback database changes for us. We can apply the transactional annotation to individual methods or we can also apply it to a class. When applied to a class it assumes that every public method will require a database connection.
+
+To use transaction management we need to have two components
+ - @EnableTransactionManagement
+ - A transaction manager
+
+
+### CGLib and proxies
+
+One entry point is the enhancer
+this allows you to set the superclass
+
+### Other notes on the Framework
+In recent versions Spring allows you to create custom annotations that are annotated with common spring annotations. This is essentially what @SpringBootApplication does. This can reduce the boilerplate significantly.
+
+Another powerful component of Spring is its usage of proxies which gives you the ability to add functionality to a class at runtime.
+
+

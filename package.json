@@ -1,0 +1,8 @@
+{
+  "name": "learning-journal",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/jkishbaugh/learning-journal.git",
+  "author": "Justin Kishbaugh kishju@gmail.com",
+  "license": "MIT"
+}

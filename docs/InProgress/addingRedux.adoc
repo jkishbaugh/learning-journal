@@ -11,30 +11,39 @@ and the advantages are hefty.
 == The Setup
 
 Alright so enough sales pitch, let's get started.
-Open your terminal and navigate to the place where your `package.json` file is located.
-//divergent paths plain redux and react redux link to each
+Of course, Redux can be used but for our purposes we will be adding Redux to a React application.
 
-- Basic redux installation with npm or with yarn run the following command
+Open your terminal and navigate to the place where your project will be live.
+Enter the following command...
 
-    npm install redux
+    npx create-react-app learningRedux
 
-    yarn install redux
-
-- Adding or using Redux with React this is your jam.
+Once this has finished its process cd to the root folder where the `package.json` file is located.
+Then run the following commands for either npm or yarn.
 
     npm install redux react-redux
 
     yarn install redux react- redux
 
-== Let's add the store
-
-//Basic project first redux alone
-//The first reducer
-//Add actions
-//Ready to run
 
 == React Create Store
 //add store to index.js
+The first task that we have is to create our store in index.js.
+
+[source, javascript]
+----
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import registerServiceWorker from './registerServiceWorker';
+import {Provider} from "react-redux";
+
+const store = createStore(reducer);
+ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
+registerServiceWorker();
+----
+
 //folder structure
 //create reducer
 //wrap App tag with Provider

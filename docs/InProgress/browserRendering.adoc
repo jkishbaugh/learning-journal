@@ -1,0 +1,46 @@
+=== Definitions
+
+
+=== *Concepts*
+
+==== __Modern Browser Main Components __
+
+- User Interface: includes the address bar, back/forward buttons,
+bookmarking menu, etc...
+- the browser engine: handles actions between the UI and the rendering engine
+
+- the rendering engine: Displays requested content (ex. HTML- parse and paint with CSS, PDF)
+
+-  Data persistence: All data the browser may need to save including cookies.
+Also supported are localStorage, IndexedDB WebSQL and FileSystem
+
+- Networking: handling HTTP requests for different platforms in a platform agnostic manner
+
+- Javascript interpreter: Parse and execute JS code
+
+- UI Backend: Used for drawing basic widgets like combo boxes and windows. Exposes a generic interface that is not
+platform specific. Uses OS user interface methods underneath it all.
+
+
+
+=== __Rendering Engine__
+common current rendering engines include webkit, gecko,  and blink
+
+the main flow
+- parse html to construct DOM tree
+- Render tree construction
+- Render tree layout
+- Paint render tree
+
+
+
+=== My Questions
+
+How does the current rendering engine handle accessibility?
+
+What does the DOM tree look like at the point of its creation in code?
+
+Is it possible to skip the html creation and render the DOM(content) tree for parsing?
+
+Would it improve markdown to handle content and style parsing simultaneously?
+

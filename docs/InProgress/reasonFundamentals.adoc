@@ -1,0 +1,40 @@
+= ReasonML at a Glance
+
+Intro
+
+== Basic Types
+There are six basic types in Reason. Reason is a statically typed language which means it evaluates types at compilation time.
+
+== Variables
+Variables are not assigned in Reason instead they are bound. You can think of this like an algebraic expression such as x = 5. The value 5 is bound to x and x will always equal 5.
+
+Int, str, bool, and float are the main built in data types.
+[source, Reason]
+----
+let num = 5; _int_
+let sum = 47.0;  _float_
+let str = "This is a string"; _string_
+let isValid = true; _bool_
+----
+
+There are different operators for int operations(+  - * /) and float operations(+. -. *. /.)
+
+There are *no* automatic type conversions in Reason. If we want to perform an arithmetic operations between a float and an int we must use the functions int_of_float() or float_of_int.
+
+*_Examples_*
+
+
+== Functions and Annotations
+
+== If and Switch Statements
+
+== Creating Data types
+
+== No more null or undefined
+
+== Creating modules
+
+== Using Collection Types
+
+== Record Types
+

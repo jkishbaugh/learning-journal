@@ -1,0 +1,18 @@
+* react router sub routes use nav link
+
+** when styling use exact before the to so that only one link will be active at a time
+
+* testing react router you need to pass in the history
+** this can be done by use createMemoryHistory() from 'history' in React
+** it will probably be necessary to create a testing util to handle this render .. I usually name it renderWithRouter
+
+=== AHA Programming
+
+AHA or avoid hasty abstraction is the idea that in an attempt to create DRY code it is possible to make
+things more difficult for ourselves by abstracting use cases too soon. Initially the abstraction seems to work
+well but when the next requirement comes in the tendency is to alter the abstraction with a parameter until the
+abstraction has become a tangled mess of conditional statements that are difficult to understand and even more challenging
+to change.
+
+To avoid this early abstraction issue the AHA method suggests writing everything in it's own function first,
+even if it repeats. When the need for abstraction becomes obvious, it can then be created.

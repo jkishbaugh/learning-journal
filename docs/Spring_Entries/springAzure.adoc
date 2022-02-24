@@ -1,0 +1,59 @@
+# Spring Functions on Azure
+
+Serverless Hype
+
+- simplicity
+- low cost
+- highly scalable
+- 0 maintenance
+
+Azure Functions - event driven serverless compute platform from Azure
+
+Spring Cloud Function has specific support for Azure
+- basically a wrapper around cloud provider...
+
+$$$ pay by requests on serverless
+pay per bucket of RAM
+pay for traffic, storage, monitoring ...
+
+Cold start exists because vms shutdown when not in use
+
+JVM vs GraalVM
+
+JVM os the easiest path tooling exists for debugging performance and developer experience however jvm is slow to start so cold starts can be an issue
+
+GraalVM is new
+
+complex to use and build  limitations also exist
+very fast startup time and very low memory consumption it is compiled as a native image
+
+hello-spring-function-azure is the example
+
+SpringBootApplication annotation is supported and gives us access to the fullness of spring libraries
+less dependence on the cloud provider
+
+maven plugin for azure functions exists to run and deploy
+
+- creates storage account, service plan with function inside, app insights for monitoring
+
+use linux to deploy to azure it functions better
+
+
+## moving to graalvm
+
+get less config from azure
+- must declare port
+- needs a json config file for deployment
+- compile script **tip use upx to zip giving you a binary that will improve cold start
+- download unzip and run is the lifecycle
+- github action can be used to build and deploy this is better because you can use github's linux vms to build your binary
+- Difficult to test as a native image
+- builds slowly
+- cannot use war ecosystem
+
+
+micronaut quarkus and spring are competitors
+
+
+
+

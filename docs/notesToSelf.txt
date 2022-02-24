@@ -1,0 +1,3 @@
+use curl command to create new spring app
+ example:
+    curl https://start.spring.io/starter.tgz -d dependencies=web,mysql,data-jpa,cloud-eureka,cloud-config-client -d     baseDir=todo-service -d bootVersion=2.3.6.RELEASE -d javaVersion=1.8 | tar -xzvf -

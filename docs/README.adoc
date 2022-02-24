@@ -1,0 +1,9 @@
+### This is the introduction page for my learning journal.
+
+So far I have writings around using redux, browser information, F#, and Some Spring Stuff.
+
+- Spring
+- F#
+- How a browser works
+- Adding Redux to React
+- Function JS examples
